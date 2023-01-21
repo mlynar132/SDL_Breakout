@@ -1,0 +1,5 @@
+﻿  Game.cpp
+C:\Work\Programming\C++\SDL\Breakout\test1\Game.cpp(63,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Main.cpp
+  Generating Code...
+  test1.vcxproj -> C:\Work\Programming\C++\SDL\Breakout\x64\Debug\test1.exe
