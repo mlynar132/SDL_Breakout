@@ -5,14 +5,30 @@
 Game* game = nullptr;
 
 int main(int argc, const char* argv[]) {
-	game = new Game();
 
+	const int fPS = 60;
+	const int frameDelay = 1000 / fPS;
+	Uint32 frameStart; //time at begining of frame
+	int frameTime; //time after events update render etc.
+
+	game = new Game();
 	game->Init("DupeEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 500, false);
 
 	while (game->Running()) {
+
+		frameStart = SDL_GetTicks();
+
 		game->HandleEvents();
 		game->Update();
 		game->Render();
+
+		frameTime = SDL_GetTicks() - frameStart; 
+
+		if (frameDelay > frameTime)
+		{
+			SDL_Delay(frameDelay - frameTime); 
+		}
+
 	}
 
 	game->Clean();
