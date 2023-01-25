@@ -1,8 +1,14 @@
 #include "Game.h"
-#include "TextureMenager.h"
+#include "ObjectBall.h"
+#include "ObjectBlock.h"
+#include "ObjectPadle.h"
+#include "ObjectPowerUp.h"
+#include "GameObjectPoli.h"
+#include "ObjectManagerPoli.h"
 
-SDL_Texture* playerTex;
-SDL_Rect srcR, destR;
+SDL_Renderer* Game::renderer = nullptr;
+
+//ObjectManagerPoli& dupa = ObjectManagerPoli::GetInstance();
 
 Game::Game() {
  
@@ -38,9 +44,18 @@ void Game::Init(const char* title, int xpos, int ypos, int width, int height, bo
 	{
 		isRunning = false;
 	}
-
-	playerTex = TextureMenager::LoadTexture("Assets/dude.png", renderer);
-
+	Level::LoadMap("Assets/TestFile1.txt", 2);
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 250,400, "Assets/dude.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{250,400, "Assets/dude.png"});
+	/*ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{{0,0,32,32}, "Assets/Block.png"});
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,0,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,34,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,34,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,68,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,68,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,102,32,32}, "Assets/Block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,102,32,32}, "Assets/Block.png" });*/
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectPadle{ 250,450, "Assets/dude.png" });
 }
 
 void Game::HandleEvents() {
@@ -58,16 +73,14 @@ void Game::HandleEvents() {
 
 void Game::Update() {
 	counter++;
-	destR.h = 16 * 2;
-	destR.w = 16 * 2;
-	destR.x = counter * 0.1;
+	ObjectManagerPoli::GetInstance().UpdateObjects();
 	std::cout << counter << '\n';
 }
 
 void Game::Render() {
 	SDL_RenderClear(renderer);	
 	//this is where we would add stuff to render
-	SDL_RenderCopy(renderer, playerTex, NULL, &destR);
+	ObjectManagerPoli::GetInstance().RenderObjects();
 	SDL_RenderPresent(renderer);
 }
 

@@ -1,7 +1,13 @@
 #pragma once
-#include "SDL.h"
-#include "SDL_image.h"
-#include "iostream"
+#include <SDL.h>
+#include <SDL_image.h>
+
+#include <iostream>
+#include <vector>
+
+#include "Level.h"
+
+class GameObjectPoli;
 
 class Game{
 
@@ -17,10 +23,9 @@ public:
 	
 	bool Running() { return isRunning; }
 
+	static SDL_Renderer* renderer;
 private:
 	int counter = 0;
 	bool isRunning;
 	SDL_Window* window;
-	SDL_Renderer* renderer;
-
 };

@@ -1,6 +1,2 @@
-﻿  Game.cpp
-D:\Work\SDL with GIt\SDL_Breakout\test1\Game.cpp(63,20): warning C4244: "=": konwersja z "double" do "int", możliwa utrata danych
-  Main.cpp
-  TextureMenager.cpp
-  Generowanie kodu...
-  test1.vcxproj -> D:\Work\SDL with GIt\SDL_Breakout\x64\Debug\test1.exe
+﻿  Main.cpp
+  test1.vcxproj -> C:\Work\Programming\C++\SDL\Breakout\x64\Debug\test1.exe

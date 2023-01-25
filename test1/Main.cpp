@@ -12,7 +12,7 @@ int main(int argc, const char* argv[]) {
 	int frameTime; //time after events update render etc.
 
 	game = new Game();
-	game->Init("DupeEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 500, false);
+	game->Init("DupeEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 900, 600, false);
 
 	while (game->Running()) {
 
