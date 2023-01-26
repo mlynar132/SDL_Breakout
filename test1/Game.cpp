@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "ObjectBall.h"
 #include "ObjectBlock.h"
-#include "ObjectPadle.h"
+#include "ObjectPaddle.h"
 #include "ObjectPowerUp.h"
 #include "GameObjectPoli.h"
 #include "ObjectManagerPoli.h"
@@ -46,7 +46,7 @@ void Game::Init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 	Level::LoadMap("Assets/TestFile1.txt", 2);
 	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 450,520,5,1, "Assets/Ball.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectPadle{ 450,552, "Assets/Padle.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectPaddle{ 450,552, "Assets/Paddle.png" });
 }
 
 void Game::HandleEvents() {

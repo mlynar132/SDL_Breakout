@@ -42,7 +42,7 @@
     <ClCompile Include="ObjectPowerUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectPadle.cpp">
+    <ClCompile Include="ObjectPaddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameObjectPoli.cpp">
@@ -77,7 +77,7 @@
     <ClInclude Include="ObjectPowerUp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectPadle.h">
+    <ClInclude Include="ObjectPaddle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectPoli.h">

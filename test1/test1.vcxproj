@@ -139,7 +139,7 @@
     <ClCompile Include="ObjectBlock.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="ObjectManagerPoli.cpp" />
-    <ClCompile Include="ObjectPadle.cpp" />
+    <ClCompile Include="ObjectPaddle.cpp" />
     <ClCompile Include="ObjectPowerUp.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
@@ -152,7 +152,7 @@
     <ClInclude Include="ObjectBlock.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ObjectManagerPoli.h" />
-    <ClInclude Include="ObjectPadle.h" />
+    <ClInclude Include="ObjectPaddle.h" />
     <ClInclude Include="ObjectPowerUp.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>

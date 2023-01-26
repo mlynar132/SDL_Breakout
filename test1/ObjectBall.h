@@ -19,7 +19,7 @@ private:
 	float x, y;
 	float radius;
 	vec2d direction;
-	int speed;
+	float speed;
 	float Magnitude(vec2d vec);
 	vec2d Normalize(vec2d vec);
 	vec2d RandomStartDirection();

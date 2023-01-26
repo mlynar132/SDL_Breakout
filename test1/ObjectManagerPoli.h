@@ -4,7 +4,7 @@
 
 #include "ObjectBall.h"
 #include "ObjectBlock.h"
-#include "ObjectPadle.h"
+#include "ObjectPaddle.h"
 #include "ObjectPowerUp.h"
 
 class ObjectManagerPoli {

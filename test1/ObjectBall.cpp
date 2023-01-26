@@ -1,6 +1,6 @@
 #include "ObjectBall.h"
 
-ObjectBall::ObjectBall(float x, float y, const char* fileName, int speed)
+ObjectBall::ObjectBall(float x, float y, float radius, float speed, const char* fileName)
 	:x(x), y(y), speed(speed)
 {
 	destRect.x = ObjectBall::x;
