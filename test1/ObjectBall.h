@@ -6,12 +6,23 @@
 class ObjectBall : public GameObjectPoli
 {
 public:
-	ObjectBall(int x, int y, const char* fileName);
+	ObjectBall(float x, float y, float radius, float speed, const char* fileName);
 	~ObjectBall();
 	void Update() override;
 	void Render() override;
 private:
-	int x, y;
+	struct vec2d
+	{
+		float x;
+		float y;
+	};
+	float x, y;
+	float radius;
+	vec2d direction;
+	int speed;
+	float Magnitude(vec2d vec);
+	vec2d Normalize(vec2d vec);
+	vec2d RandomStartDirection();
 	SDL_Rect destRect;
 	SDL_Texture* tex;
 };

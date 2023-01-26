@@ -45,17 +45,8 @@ void Game::Init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 	Level::LoadMap("Assets/TestFile1.txt", 2);
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 250,400, "Assets/dude.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{250,400, "Assets/dude.png"});
-	/*ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{{0,0,32,32}, "Assets/Block.png"});
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,0,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,34,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,34,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,68,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,68,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {0,102,32,32}, "Assets/Block.png" });
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBlock{ {34,102,32,32}, "Assets/Block.png" });*/
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectPadle{ 250,450, "Assets/dude.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 450,520,5,1, "Assets/Ball.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectPadle{ 450,552, "Assets/Padle.png" });
 }
 
 void Game::HandleEvents() {
@@ -74,7 +65,6 @@ void Game::HandleEvents() {
 void Game::Update() {
 	counter++;
 	ObjectManagerPoli::GetInstance().UpdateObjects();
-	std::cout << counter << '\n';
 }
 
 void Game::Render() {

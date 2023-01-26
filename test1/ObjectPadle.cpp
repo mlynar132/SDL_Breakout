@@ -11,7 +11,15 @@ ObjectPadle::ObjectPadle(int x, int y, const char* fileName)
 }
 
 void ObjectPadle::Update() {
-	std::cout << "dsau\n";
+	const Uint8* state = SDL_GetKeyboardState(NULL);
+	if (state[SDL_SCANCODE_A])
+	{
+		destRect.x -= 1;
+	}
+	if (state[SDL_SCANCODE_D])
+	{
+		destRect.x += 1;
+	}
 }
 
 void ObjectPadle::Render() {

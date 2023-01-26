@@ -7,8 +7,6 @@
 #include "ObjectManagerPoli.h"
 #include "GameObjectPoli.h"
 
-//ObjectManagerPoli& dupa = ObjectManagerPoli::GetInstance();
-
 Level::Level() {
 
 }
@@ -16,31 +14,6 @@ Level::Level() {
 Level::~Level() {
 
 }
-//void Level::LoadMap(char* mapTxt) {
-	/*std::ifstream file;
-file.open("Assets/TestFile1.txt");
-std::string temp;
-while (file >> temp)
-{
-	for (int i = 0; i < temp.size(); i++)
-	{
-		std::cout << temp[i];
-		GameObject* lol = new GameObject(0, 0, "Assets/block.png");
-	//	GameObject lol(0, 0, "Assets/block.png");
-		/*switch (temp[i])
-		{
-		case 0:
-			break;
-		case 1:
-			GameObject lol(0, 0, "Assets/block.png");
-			break;
-		default:
-			break;
-		}
-	}
-	std::cout << '\n';
-}*/
-//}
 
 void Level::LoadMap(const char* mapTxt, int spaces) {
 	std::ifstream file;
@@ -74,7 +47,6 @@ void Level::LoadMap(const char* mapTxt, int spaces) {
 				std::cout << "something wrong in level loading. Deafault case used";
 				break;
 			}
-		
 		}
 		buffer.pop();
 	}

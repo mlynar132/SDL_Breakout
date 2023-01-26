@@ -20,7 +20,6 @@ void ObjectManagerPoli::UpdateObjects() {
 	{
 		objects[i]->Update();
 	}
-	std::cout << objects.size();
 }
 
 void ObjectManagerPoli::RenderObjects() {
