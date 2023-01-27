@@ -3,6 +3,8 @@
 ObjectBall::ObjectBall(float x, float y, float radius, float speed, const char* fileName)
 	:x(x), y(y), radius(radius), speed(speed)
 {
+	ObjectType = Ball;
+
 	destRect.x = ObjectBall::x;
 	destRect.y = ObjectBall::y;
 	destRect.w = 16 * 2;
@@ -15,7 +17,13 @@ ObjectBall::ObjectBall(float x, float y, float radius, float speed, const char* 
 }
 
 void ObjectBall::Update() {
-	ObjectManagerPoli::GetInstance().CheckBallCollisionFor(this,radius);
+	ObjectManagerPoli::GetInstance().CheckBallCollisionFor(this, radius);
+	if (center.y > 600 + radius)
+	{
+		dead = true;
+		//delete this;
+		//ObjectManagerPoli::GetInstance().RemoveObject()
+	}
 	//x += direction.x * speed;
 	center.x += direction.x * speed;
 	destRect.x = center.x - radius;
@@ -27,6 +35,10 @@ void ObjectBall::Update() {
 
 void ObjectBall::Render() {
 	SDL_RenderCopy(Game::renderer, tex, NULL, &destRect);
+	SDL_SetRenderDrawColor(Game::renderer, 0, 255, 0, 255);
+	SDL_RenderDrawLineF(Game::renderer, center.x, center.y, center.x + direction.x * speed * 50, center.y - direction.y * speed * 50);
+	//std::cout << center.x << ' ' << center.y << ' ' << center.x + direction.x * speed * 50 << ' ' << center.y - direction.y * speed * 50 << '\n';
+	SDL_SetRenderDrawColor(Game::renderer, 50, 50, 50, 255);
 }
 
 float ObjectBall::Magnitude(vec2d vec) {
@@ -38,7 +50,7 @@ ObjectBall::vec2d ObjectBall::Normalize(vec2d vec) {
 	return vec2d{ vec.x / mag, vec.y / mag };
 }
 
-GameObjectPoli::vec2d ObjectBall::RandomStartDirection(){
+GameObjectPoli::vec2d ObjectBall::RandomStartDirection() {
 	srand((unsigned int)time(NULL));
 	direction.x = (rand() % 10) + 1;
 	direction.y = (rand() % 10) + 1;

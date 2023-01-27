@@ -3,6 +3,8 @@
 ObjectPaddle::ObjectPaddle(int x, int y, const char* fileName)
 	:x(x), y(y)
 {
+	ObjectType = Paddle;
+
 	destRect.x = ObjectPaddle::x;
 	destRect.y = ObjectPaddle::y;
 	destRect.w = 16 * 2;

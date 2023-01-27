@@ -7,6 +7,7 @@ ObjectPowerUp::ObjectPowerUp(int x, int y, const char* fileName)
 	destRect.y = ObjectPowerUp::y;
 	destRect.w = 16 * 2;
 	destRect.h = 16 * 2;
+
 	tex = TextureManager::LoadTexture(fileName);
 }
 

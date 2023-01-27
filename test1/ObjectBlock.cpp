@@ -3,9 +3,11 @@
 ObjectBlock::ObjectBlock(SDL_Rect dest, const char* fileName)
 	:destRect(dest)
 {
+	ObjectType = Block;
+
 	SetCenter();
 	SetPoints();
-	
+
 	tex = TextureManager::LoadTexture(fileName);
 }
 

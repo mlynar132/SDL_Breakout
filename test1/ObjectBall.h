@@ -17,7 +17,6 @@ public:
 private:
 	float x, y;
 	float radius;
-	vec2d direction;
 	float speed;
 	float Magnitude(vec2d vec);
 	vec2d Normalize(vec2d vec);

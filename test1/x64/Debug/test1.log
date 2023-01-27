@@ -1,2 +1,11 @@
 ﻿  ObjectManagerPoli.cpp
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(89,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(126,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(127,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(128,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(129,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(130,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(131,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(132,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Work\Programming\C++\SDL\Breakout\test1\ObjectManagerPoli.cpp(133,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   test1.vcxproj -> C:\Work\Programming\C++\SDL\Breakout\x64\Debug\test1.exe

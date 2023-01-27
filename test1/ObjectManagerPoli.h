@@ -6,6 +6,7 @@
 #include "ObjectBlock.h"
 #include "ObjectPaddle.h"
 #include "ObjectPowerUp.h"
+#include "ObjectBarierBlock.h"
 
 class ObjectManagerPoli {
 protected:
@@ -20,8 +21,10 @@ public:
 	void UpdateObjects();
 	void RenderObjects();
 	void AddObject(GameObjectPoli* object);
-	void RemoveObject(GameObjectPoli* object);
+	void RemoveObject();
 	void CheckBallCollisionFor(GameObjectPoli* object, float radius);
+	bool CheckForGameOver();
 private:
 	std::vector<std::unique_ptr<GameObjectPoli>> objects;
+	bool Intersects(GameObjectPoli::vec2d A, GameObjectPoli::vec2d B, GameObjectPoli::vec2d X, GameObjectPoli::vec2d Y);
 };

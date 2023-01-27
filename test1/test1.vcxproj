@@ -141,12 +141,14 @@
     <ClCompile Include="ObjectManagerPoli.cpp" />
     <ClCompile Include="ObjectPaddle.cpp" />
     <ClCompile Include="ObjectPowerUp.cpp" />
+    <ClCompile Include="ObjectBarierBlock.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectPoli.h" />
+    <ClInclude Include="ObjectBarierBlock.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="ObjectBall.h" />
     <ClInclude Include="ObjectBlock.h" />

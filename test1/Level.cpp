@@ -23,6 +23,10 @@ void Level::LoadMap(const char* mapTxt, int spaces) {
 	int windowW;
 	int windowH;//might wanna clean those
 	SDL_GetRendererOutputSize(Game::renderer, &windowW, &windowH);
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBarierBlock{ {-10,0,10,windowH},"Assets/block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBarierBlock{ {0,-10,windowW,10},"Assets/block.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBarierBlock{ {windowW,0,10,windowH},"Assets/block.png" });
+
 	windowH -= 100;
 	while (file >> temp)
 	{
