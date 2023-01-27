@@ -2,6 +2,7 @@
 
 #include "GameObjectPoli.h"
 #include "TextureManager.h"
+#include "ObjectManagerPoli.h"
 
 class ObjectBall : public GameObjectPoli
 {
@@ -10,12 +11,10 @@ public:
 	~ObjectBall();
 	void Update() override;
 	void Render() override;
+	void SetCenter() override;
+	void SetPoints() override;
+	void DebugMe() override;
 private:
-	struct vec2d
-	{
-		float x;
-		float y;
-	};
 	float x, y;
 	float radius;
 	vec2d direction;

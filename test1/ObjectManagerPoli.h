@@ -21,6 +21,7 @@ public:
 	void RenderObjects();
 	void AddObject(GameObjectPoli* object);
 	void RemoveObject(GameObjectPoli* object);
+	void CheckBallCollisionFor(GameObjectPoli* object, float radius);
 private:
 	std::vector<std::unique_ptr<GameObjectPoli>> objects;
 };

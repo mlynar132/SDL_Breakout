@@ -12,6 +12,9 @@ public:
 	~ObjectPaddle();
 	void Update() override;
 	void Render() override;
+	void SetCenter() override;
+	void SetPoints() override;
+	void DebugMe() override;
 private:
 	int x, y;
 	SDL_Rect destRect;

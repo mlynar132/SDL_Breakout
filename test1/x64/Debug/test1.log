@@ -1,13 +1,2 @@
-﻿  Game.cpp
-  Level.cpp
-C:\Work\Programming\C++\SDL\Breakout\test1\Level.cpp(31,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  ObjectBall.cpp
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(6,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(7,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(16,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(18,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(36,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Work\Programming\C++\SDL\Breakout\test1\ObjectBall.cpp(37,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  ObjectManagerPoli.cpp
-  Generating Code...
+﻿  ObjectManagerPoli.cpp
   test1.vcxproj -> C:\Work\Programming\C++\SDL\Breakout\x64\Debug\test1.exe

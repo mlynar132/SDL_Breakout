@@ -24,6 +24,11 @@ public:
 	bool Running() { return isRunning; }
 
 	static SDL_Renderer* renderer;
+
+	struct vec2d {
+		float x;
+		float y;
+	};
 private:
 	int counter = 0;
 	bool isRunning;

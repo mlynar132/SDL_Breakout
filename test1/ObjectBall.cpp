@@ -1,21 +1,28 @@
 #include "ObjectBall.h"
 
 ObjectBall::ObjectBall(float x, float y, float radius, float speed, const char* fileName)
-	:x(x), y(y), speed(speed)
+	:x(x), y(y), radius(radius), speed(speed)
 {
 	destRect.x = ObjectBall::x;
 	destRect.y = ObjectBall::y;
 	destRect.w = 16 * 2;
 	destRect.h = 16 * 2;
+	SetCenter();
+	SetPoints();
+
 	tex = TextureManager::LoadTexture(fileName);
 	direction = RandomStartDirection();
 }
 
 void ObjectBall::Update() {
-	x += direction.x * speed;
-	destRect.x = x;
-	y -= direction.y * speed;
-	destRect.y = y;
+	ObjectManagerPoli::GetInstance().CheckBallCollisionFor(this,radius);
+	//x += direction.x * speed;
+	center.x += direction.x * speed;
+	destRect.x = center.x - radius;
+	//center.x = x;
+	//y -= direction.y * speed;
+	center.y -= direction.y * speed;
+	destRect.y = center.y - radius;
 }
 
 void ObjectBall::Render() {
@@ -31,7 +38,7 @@ ObjectBall::vec2d ObjectBall::Normalize(vec2d vec) {
 	return vec2d{ vec.x / mag, vec.y / mag };
 }
 
-ObjectBall::vec2d ObjectBall::RandomStartDirection(){
+GameObjectPoli::vec2d ObjectBall::RandomStartDirection(){
 	srand((unsigned int)time(NULL));
 	direction.x = (rand() % 10) + 1;
 	direction.y = (rand() % 10) + 1;
@@ -40,4 +47,24 @@ ObjectBall::vec2d ObjectBall::RandomStartDirection(){
 		direction.x *= -1;
 	}
 	return Normalize(direction);
+}
+
+void ObjectBall::SetCenter() {
+	center.x = destRect.x + destRect.w / 2;
+	center.y = destRect.y + destRect.h / 2;
+}
+
+void ObjectBall::SetPoints() {
+	points.push_back(center);
+}
+
+void ObjectBall::DebugMe() {
+	SDL_Rect nah;
+	nah.x = destRect.x;
+	nah.y = destRect.y;
+	nah.w = destRect.w + 10;
+	nah.h = destRect.h + 10;
+	SDL_SetRenderDrawColor(Game::renderer, 0, 200, 0, 255);
+	SDL_RenderDrawRect(Game::renderer, &nah);
+	SDL_SetRenderDrawColor(Game::renderer, 50, 50, 50, 255);
 }

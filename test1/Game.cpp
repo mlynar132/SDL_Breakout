@@ -45,7 +45,7 @@ void Game::Init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 	Level::LoadMap("Assets/TestFile1.txt", 2);
-	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 450,520,5,1, "Assets/Ball.png" });
+	ObjectManagerPoli::GetInstance().AddObject(new ObjectBall{ 450,500,16,1, "Assets/Ball.png" });
 	ObjectManagerPoli::GetInstance().AddObject(new ObjectPaddle{ 450,552, "Assets/Paddle.png" });
 }
 

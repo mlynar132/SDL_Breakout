@@ -8,18 +8,13 @@
 class ObjectBlock : public GameObjectPoli
 {
 public:
-
 	ObjectBlock(SDL_Rect dest, const char* fileName);
 	~ObjectBlock();
 	void Update() override;
 	void Render() override;
-	struct vec2d//might wanna do this with ints to avoid casting
-	{
-		float x;
-		float y;
-	};
-	vec2d center;
-	std::vector<vec2d> points;
+	void SetCenter() override;
+	void SetPoints() override;
+	void DebugMe() override;
 private:
 	SDL_Rect destRect;
 	SDL_Texture* tex;
